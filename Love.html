@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To Anusaya, With Love</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      background: linear-gradient(to right, #fff0f5, #ffe6f0);
+      text-align: center;
+      font-size: 22px;
+      font-family: 'Great Vibes', cursive;
+    }
+    .page {
+      display: none;
+    }
+    .active {
+      display: block;
+      animation: fadeIn 1s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    button {
+      padding: 12px 25px;
+      background: #ff66a3;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    img {
+      margin-top: 20px;
+      max-width: 90%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Pages Start -->
+
+<!-- Pages 1 to 9 same as before -->
+
+<!-- Final Page -->
+<div id="page10" class="page">
+  <h2>Page 10: Forever Yours</h2>
+  <p>My Anusaya, you are not my part—you are my whole. I am yours completely, endlessly, truly.</p>
+  <p style="font-size: 30px;">❤️ I Love You ❤️</p>
+  <p>Here's something special, just for you:</p>
+  <img src="surprise.jpg" alt="Surprise for Anusaya">
+</div>
+
+<script>
+  function checkAnswer(pageNum, correct) {
+    const input = document.getElementById('answer' + pageNum).value.trim().toLowerCase();
+    if (input === correct.toLowerCase()) {
+      nextPage(pageNum + 1);
+    } else {
+      alert("Oops! Try again, my love.");
+    }
+  }
+
+  function nextPage(pageNum) {
+    const current = document.querySelector('.page.active');
+    if (current) current.classList.remove('active');
+    const next = document.getElementById('page' + pageNum);
+    if (next) next.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
